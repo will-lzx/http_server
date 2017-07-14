@@ -5,7 +5,8 @@ from django.http import HttpResponse
 
 
 def index(request):
-    return HttpResponse('will')
+    data = request.META['QUERY_STRING'].split('=')[1]
+    return HttpResponse(data)
 
 
 def exchange(request, value):
